@@ -11,6 +11,7 @@ import jakarta.servlet.ServletContext;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -23,6 +24,8 @@ import model.Pompier;
  *
  * @author zakina
  */
+
+@WebServlet(name = "ServletPompier", urlPatterns = {"/ServletPompier"})
 public class ServletPompier extends HttpServlet {
 
      Connection cnx ;
@@ -30,8 +33,9 @@ public class ServletPompier extends HttpServlet {
     @Override
     public void init()
     {     
+        System.out.println("Servlet init");
         ServletContext servletContext=getServletContext();
-        cnx = (Connection)servletContext.getAttribute("connection");     
+        cnx = (Connection)servletContext.getAttribute("connection");   
     }
 
     

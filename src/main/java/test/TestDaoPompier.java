@@ -26,11 +26,12 @@ public class TestDaoPompier {
         Pompier p = new Pompier();
         p.setNom("CHAUVEL");
         p.setPrenom("Jules");
+        p.setBip("2");
         p.setUneCaserne(new Caserne(1));
         
-        p = DaoPompier.addPompier(cnx, p);
+        // p = DaoPompier.addPompier(cnx, p); //
         System.out.println("le nouveau pompier a reçu l id = " + p.getId());
-        
+        System.out.println("le nouveau pompier a reçu l bip = " + p.getBip());
         
     }
     

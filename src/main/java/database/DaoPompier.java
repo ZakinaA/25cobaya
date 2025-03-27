@@ -26,7 +26,7 @@ public class DaoPompier {
         
         ArrayList<Pompier> lesPompiers = new ArrayList<Pompier>();
         try{
-            requeteSql = cnx.prepareStatement("select pompier.id as p_id, pompier.nom as p_nom, pompier.prenom as p_prenom, c.id as c_id, c.nom as c_nom " +
+            requeteSql = cnx.prepareStatement("select pompier.id as p_id, pompier.nom as p_nom, pompier.prenom as p_prenom, pompier.dateNaissance as p_dateNaissance, c.id as c_id, c.nom as c_nom " +
                          " from pompier inner join caserne c " +
                          " on pompier.caserne_id = c.id ");
             resultatRequete = requeteSql.executeQuery();
@@ -37,7 +37,8 @@ public class DaoPompier {
                     p.setId(resultatRequete.getInt("p_id"));
                     p.setNom(resultatRequete.getString("p_nom"));
                     p.setPrenom(resultatRequete.getString("p_prenom"));
-                Caserne c = new Caserne();
+                    p.setDateNaissance(resultatRequete.getString("p_dateNaissance"));
+                    Caserne c = new Caserne();
                     c.setId(resultatRequete.getInt("c_id"));
                     c.setNom(resultatRequete.getString("c_nom"));
                 
@@ -58,7 +59,7 @@ public class DaoPompier {
         
         Pompier p = null ;
         try{
-            requeteSql = cnx.prepareStatement("select pompier.id as p_id, pompier.nom as p_nom, pompier.prenom as p_prenom, c.id as c_id, c.nom as c_nom " +
+            requeteSql = cnx.prepareStatement("select pompier.id as p_id, pompier.nom as p_nom, pompier.bip as p_bip , pompier.prenom as p_prenom, pompier.dateNaissance as p_dateNaissance, c.id as c_id, c.nom as c_nom " +
                          " from pompier inner join caserne c " +
                          " on pompier.caserne_id = c.id "+
                          " where pompier.id= ? ");
@@ -71,6 +72,8 @@ public class DaoPompier {
                     p.setId(resultatRequete.getInt("p_id"));
                     p.setNom(resultatRequete.getString("p_nom"));
                     p.setPrenom(resultatRequete.getString("p_prenom"));
+                    p.setBip(resultatRequete.getString("p_bip"));
+                    p.setDateNaissance(resultatRequete.getString("p_dateNaissance"));
                 Caserne c = new Caserne();
                     c.setId(resultatRequete.getInt("c_id"));
                     c.setNom(resultatRequete.getString("c_nom"));

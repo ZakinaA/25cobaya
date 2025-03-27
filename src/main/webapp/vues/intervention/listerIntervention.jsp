@@ -1,24 +1,18 @@
 <%-- 
-    Document   : listerPompiers.jsp
-    Created on : 15 mars 2024, 16:50:49
-    Author     : zakina
+    Document   : listerIntervention
+    Created on : 27 mars 2025, 16:51:08
+    Author     : TS1SIO
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="model.Pompier"%>
-<%@page import="model.Caserne"%>
+<%@page import="model.Intervention"%>
 <%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>SDIS WEB</title>
-    </head>
-    <body>
-        <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>APPLICATION DE GESTION SDIS CALVADOS</title>
-       <style>
+        <style>
             /* Global Styles */
             body {
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -39,10 +33,11 @@
 
             h1 {
                 font-size: 36px;
-                color: #003366;
+                color: white; /* Changer la couleur du titre en blanc */
                 text-align: center;
-                margin-top: 20px;
+                margin-top: 20px;    
             }
+
 
             /* Table Styles */
             table {
@@ -99,44 +94,54 @@
         </style>
     </head>
     <body>
-        <h1>Liste des pompiers du Calvados</h1>
-            <%
-                ArrayList<Pompier> lesPompiers = (ArrayList)request.getAttribute("pLesPompiers");
-            %>
-            <table>  
+        <header>
+            <h1>Liste des interventions du Calvados</h1>
+        </header>
+
+        <%
+            // Récupérer la liste des interventions depuis l'attribut de requête
+            ArrayList<Intervention> lesInterventions = (ArrayList) request.getAttribute("pLesInterventions");
+        %>
+
+        <table>
             <thead>
-                <tr>             
+                <tr>
                     <th>Id</th>
-                    <th>Nom</th>
-                    <th>Prenom</th>
-                    <th>Caserne</th>
+                    <th>Date appel</th>
+                    <th>Heure arrivée</th>
+                    <th>Durée</th>
+                    <th>Lieu</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <%
-                        for (Pompier p : lesPompiers)
-                        {              
-                            out.println("<tr><td>");
-                            out.println(p.getId());
-                            out.println("</a></td>");
-
-                            out.println("<td><a href ='../ServletPompier/consulter?idPompier="+ p.getId()+ "'>");
-                            out.println(p.getNom());
-                            out.println("</td>");;
-
-                            out.println("<td>");
-                            out.println(p.getPrenom());
-                            out.println("</td>");
-                           
-                            out.println("<td>");
-                            out.println(p.getUneCaserne().getNom());
-                            out.println("</td>");
+                <%
+                    // Vérifier si la liste d'interventions est vide
+                    if (lesInterventions != null && !lesInterventions.isEmpty()) {
+                        // Parcourir la liste des interventions
+                        for (Intervention i : lesInterventions) {
+                %>
+                    <tr>
+                        <td><%= i.getId() %></td>
+                        <td><%= i.getDateAppel() %></td>
+                        <td><%= i.getHeureArrivee() %></td>
+                        <td><%= i.getDuree() %></td>
+                        <td><%= i.getLieu() %></td>
+                    </tr>
+                <%
                         }
-                    %>
-                </tr>
+                    } else {
+                %>
+                    <tr>
+                        <td colspan="5" style="text-align: center;">Aucune intervention disponible.</td>
+                    </tr>
+                <%
+                    }
+                %>
             </tbody>
         </table>
-    </body>
+
+        <footer>
+            SDIS CALVADOS &copy; 2025 - Tous droits réservés
+        </footer>
     </body>
 </html>

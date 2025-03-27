@@ -14,9 +14,49 @@ public class Pompier {
     private String bip ;
     private String nom;
     private String prenom ;
+    private String dateNaissance;
     private Caserne uneCaserne ;
 
     public Pompier() {
+    }
+
+    public Pompier(int id) {
+        this.id = id;
+    }
+
+    public Pompier(int id, String bip) {
+        this.id = id;
+        this.bip = bip;
+    }
+
+    public Pompier(int id, String bip, String nom) {
+        this.id = id;
+        this.bip = bip;
+        this.nom = nom;
+    }
+
+    public Pompier(int id, String bip, String nom, String prenom) {
+        this.id = id;
+        this.bip = bip;
+        this.nom = nom;
+        this.prenom = prenom;
+    }
+
+    public Pompier(int id, String bip, String nom, String prenom, String dateNaissance) {
+        this.id = id;
+        this.bip = bip;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateNaissance = dateNaissance;
+    }
+
+    public Pompier(int id, String bip, String nom, String prenom, String dateNaissance, Caserne uneCaserne) {
+        this.id = id;
+        this.bip = bip;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.dateNaissance = dateNaissance;
+        this.uneCaserne = uneCaserne;
     }
 
     public int getId() {
@@ -51,6 +91,14 @@ public class Pompier {
         this.prenom = prenom;
     }
 
+    public String getDateNaissance() {
+        return dateNaissance;
+    }
+
+    public void setDateNaissance(String dateNaissance) {
+        this.dateNaissance = dateNaissance;
+    }
+
     public Caserne getUneCaserne() {
         return uneCaserne;
     }
@@ -58,7 +106,4 @@ public class Pompier {
     public void setUneCaserne(Caserne uneCaserne) {
         this.uneCaserne = uneCaserne;
     }
-    
-    
-    
 }
