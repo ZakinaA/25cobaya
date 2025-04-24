@@ -1,6 +1,8 @@
 model\Intervention.class
 database\DaoCaserne.class
 servlet\ServletPompier.class
+test\TestDaoSituation.class
+model\Situation.class
 form\FormPompier.class
 test\TestDaoIntervention.class
 database\ConnexionBdd.class
@@ -14,3 +16,4 @@ servlet\ServletIntervention.class
 test\TestDaoCaserne.class
 database\DaoPompier.class
 bts\sio\sdisweb\JakartaRestConfiguration.class
+database\DaoSituation.class

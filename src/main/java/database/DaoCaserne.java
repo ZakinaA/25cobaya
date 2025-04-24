@@ -42,7 +42,7 @@ public class DaoCaserne {
         }
         catch (SQLException e){
             e.printStackTrace();
-            System.out.println("La requête de getLesPompiers e généré une erreur");
+            System.out.println("La requête de getLesPompiers a généré une erreur");
         }
         return lesCasernes;
     }

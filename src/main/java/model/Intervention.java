@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author TS1SIO
@@ -14,6 +16,7 @@ public class Intervention {
     private String heureArrivee;
     private String duree ;
     private String lieu;
+    private ArrayList<Situation> lesSituations ;
 
     public Intervention() {
     }
@@ -46,6 +49,15 @@ public class Intervention {
         this.heureArrivee = heureArrivee;
         this.duree = duree;
         this.lieu = lieu;
+    }
+
+    public Intervention(int id, String dateAppel, String heureArrivee, String duree, String lieu, ArrayList<Situation> lesSituations) {
+        this.id = id;
+        this.dateAppel = dateAppel;
+        this.heureArrivee = heureArrivee;
+        this.duree = duree;
+        this.lieu = lieu;
+        this.lesSituations = lesSituations;
     }
 
     public int getId() {
@@ -86,5 +98,13 @@ public class Intervention {
 
     public void setLieu(String lieu) {
         this.lieu = lieu;
+    }
+
+    public ArrayList<Situation> getLesSituations() {
+        return lesSituations;
+    }
+
+    public void setLesSituations(ArrayList<Situation> lesSituations) {
+        this.lesSituations = lesSituations;
     }
 }

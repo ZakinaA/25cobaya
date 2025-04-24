@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.util.ArrayList;
+import model.Intervention;
 
 /**
  *
@@ -49,15 +50,19 @@ public class ServletIntervention extends HttpServlet {
             getServletContext().getRequestDispatcher("/vues/intervention/listerIntervention.jsp").forward(request, response);
             }
         
-        /*if(url.equals("/PoudlardWeb/ServletEleve/consulter"))
-        {
-            int idEleve= Integer.parseInt((String)request.getParameter("idEleve"));
-            Eleve unEleve = DaoEleve.getEleveById(cnx, idEleve);
-            request.setAttribute("pUnEleve", unEleve);
-            getServletContext().getRequestDispatcher("/vues/eleve/consulter.jsp").forward(request, response);
-            }
-        
-        if(url.equals("/PoudlardWeb/ServletEleve/addEleve"))
+        if(url.equals("/sdisweb/ServletIntervention/consulter")){
+            String idParam = request.getParameter("id");
+            
+            if (idParam != null && !idParam.isEmpty()) {
+            int id = Integer.parseInt(idParam);
+            Intervention uneIntervention = DaoIntervention.getInterventionById(id, cnx);
+                
+            request.setAttribute("pUneIntervention", uneIntervention);
+            System.out.println("Intervention consultée avec ID : " + id);
+            getServletContext().getRequestDispatcher("/vues/intervention/consulterIntervention.jsp").forward(request, response);
+            } 
+        }
+        /*if(url.equals("/PoudlardWeb/ServletEleve/addEleve"))
         {
             ArrayList lesMaisons = DaoMaison.getLesMaisons(cnx);
             request.setAttribute("pLesMaisons", lesMaisons);

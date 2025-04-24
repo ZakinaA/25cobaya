@@ -1,8 +1,10 @@
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\database\InitConnexion.java
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\test\TestDaoPompier.java
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\database\DaoIntervention.java
+E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\database\DaoSituation.java
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\model\Pompier.java
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\model\Caserne.java
+E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\test\TestDaoSituation.java
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\servlet\ServletIntervention.java
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\form\FormPompier.java
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\bts\sio\sdisweb\resources\JakartaEE10Resource.java
@@ -10,6 +12,7 @@ E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\d
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\bts\sio\sdisweb\JakartaRestConfiguration.java
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\database\DaoCaserne.java
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\model\Intervention.java
+E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\model\Situation.java
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\servlet\ServletPompier.java
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\database\DaoPompier.java
 E:\TS1SIO\MATIERES\B2\JAVA\SdisWeb\Projet_Pompier\sdisweb-master\src\main\java\test\TestDaoCaserne.java

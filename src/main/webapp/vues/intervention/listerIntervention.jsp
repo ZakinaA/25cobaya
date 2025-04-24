@@ -121,12 +121,28 @@
                         for (Intervention i : lesInterventions) {
                 %>
                     <tr>
-                        <td><%= i.getId() %></td>
-                        <td><%= i.getDateAppel() %></td>
-                        <td><%= i.getHeureArrivee() %></td>
-                        <td><%= i.getDuree() %></td>
-                        <td><%= i.getLieu() %></td>
-                    </tr>
+                    <%  
+                           out.println("<td><a href='../ServletIntervention/consulter?id=" + i.getId() + "'>");
+                           out.println(i.getId());
+                           out.println("</a></td>");
+
+                            out.println("<td>");
+                            out.println(i.getDateAppel());
+                            out.println("</td>");;
+
+                            out.println("<td>");
+                            out.println(i.getHeureArrivee());
+                            out.println("</td>");
+                           
+                            out.println("<td>");
+                            out.println(i.getDuree());
+                            out.println("</td>");
+                            
+                            out.println("<td>");
+                            out.println(i.getLieu());
+                            out.println("</td>");
+                    %>
+                </tr>
                 <%
                         }
                     } else {
